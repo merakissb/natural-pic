@@ -6,11 +6,13 @@ import { FavoritesContext } from '../components/FavoritesContext';
 import './Home.css';
 
 const Home = () => {
-  const { addFavorite, isFavorite } = useContext(FavoritesContext);
+  const { addFavorite, isFavorite, removeFavorite } = useContext(FavoritesContext);
 
   const handleAddFavorite = (photo) => {
     if (!isFavorite(photo)) {
       addFavorite(photo);
+    } else {
+      removeFavorite(photo);
     }
   };
 
